@@ -1,0 +1,822 @@
+
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Ferienwohnung bei Nonners</title>
+
+<!--
+<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>
+-->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery-lang.js"></script>
+
+
+<style type="text/css">
+
+	@font-face {
+	font-family: QCS;
+	src: url("fonts/QuattrocentoSans-Regular.otf") format("opentype");
+	}
+
+	@font-face {
+	font-family: QCSI;
+	src: url("fonts/QuattrocentoSans-Italic.otf") format("opentype");
+	}
+
+	@font-face {
+	font-family: QCS-bold;
+	font-weight: bold;
+	src: url("fonts/QuattrocentoSans-Bold.otf") format("opentype");
+	}
+
+	hr { display: block; height: 1px; background-color: black;
+    	border: 0; border-top: 1px solid #eee;
+    	margin: 10px 0; padding: 0; }
+
+	.image-pic {
+		width:1000px;		
+		height:667px;
+		top:0px;
+		top-margin:0px;
+		border:0px;
+		/*
+		-webkit-box-shadow: 2px 17px 48px -9px rgba(100,100,100,1);
+		-moz-box-shadow: 2px 17px 48px -9px rgba(100,100,100,1);
+		*/	
+	    /*
+	    max-width: 100%;
+	    width: auto; /* ie8 */
+	}
+
+	/*
+	.header-box {
+		position:relative;
+		margin-left: auto ;
+		margin-right: auto ;
+		top:0px;
+		width: 1000px;
+		height: 0px;
+		text-align: center;
+		/*border:solid 20px orange;*/
+	}
+	*/
+
+	.lang-button {
+		display: inline;
+	}
+
+	.lang-button:hover {
+	    	color: #f00;    /* Red */
+	}
+|
+	.line-separate {
+		width:1000px;
+		height:4px;
+		background-color:black;
+	}
+
+
+	
+	body, html {
+	  padding: 0px;
+	  margin-top: 0px;
+	  margin-left: 0px;
+	  border: 0px none;
+	  width: 100%;
+	  height: 100%;
+	  background-color: #FFFFFF;
+	}
+
+	.box {
+		position:relative;
+		/*background: none repeat scroll 0 0 #FFFFFF;*/
+		/*margin-top:40px ;
+		margin-bottom:40px ;
+		*/
+		margin-left: auto ;
+		margin-right: auto ;
+		width: 1000px;
+		box-shadow: 0px 20px 20px 0px rgba(200,200,200,1);
+		/*height: 677px;*/
+	}
+
+	.header-box {
+		position:relative;
+		/*background: none repeat scroll 0 0 #FFFFFF;*/
+		/*margin-top:40px ;
+		margin-bottom:40px ;
+		*/
+		margin-left: auto ;
+		margin-right: auto ;
+		width: 1000px;
+		/*height: 200px;*/
+		/*text-align: center;*/
+	}
+
+	.footer-box {
+		position:relative;
+		/*background: none repeat scroll 0 0 #FFFFFF;*/
+		/*margin-top:40px ;
+		margin-bottom:40px ;
+		*/
+		margin-left: auto ;
+		margin-right: auto ;
+		width: 1000px;
+		text-align: center;
+	}
+
+	.post-content {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    opacity: 1.0;
+	    width:400px;
+	    top:50px;
+	    left:0px;
+	    position: absolute;
+	}
+
+	.post-content-small {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    opacity: 1.0;
+	    width:357px;
+	    top:50px;
+	    left:0px;
+	    position: absolute;
+	}
+
+	.post-content-right {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    opacity: 1.0;
+	    width:400px;
+	    top:50px;
+	    left:600px;
+	    position: absolute;
+	}
+
+	.post-content-right-bottom {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    opacity: 1.0;
+	    width:400px;
+	    bottom:80px;
+	    left:600px;
+	    position: absolute;
+	}
+
+	.post-content-right-bottom-small {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    opacity: 1.0;
+	    width:330px;
+	    bottom:80px;
+	    left:670px;
+	    position: absolute;
+	}
+
+	.thumbnail{
+		position:relative;
+		margin-left: auto ;
+		margin-right: auto ;
+		width: 1000px;
+	}
+
+
+	h1 {
+		color: #000000;
+		font-family: 'QCS';
+		font-size: 40px;
+		line-height: 120%; 
+		margin-top: 0px;
+		margin-left: 40px;
+		margin-bottom: 0px;
+		margin-right: 40px;
+	}
+
+	h2 {
+		color: #000000;
+		font-family: 'QCS';
+		font-size: 20px;
+		line-height: 120%; 
+		margin-top: 20px;
+		margin-left: 40px;
+		margin-bottom: 20px;
+		margin-right: 40px;
+	}
+
+	p {
+		color: #333333;
+		font-family: 'QCS';
+		font-size: 16px;
+		margin-top: 40px;
+		margin-left: 40px;
+		margin-right: 40px;
+		margin-bottom: 40px;
+	}
+
+	ps {
+		color: #333333;
+		font-family: 'QCS';
+		font-size: 16px;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+
+	psi {
+		color: #333333;
+		font-family: 'QCSI';
+		font-size: 16px;
+		margin-top: 0px;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+</style>
+
+
+<script>
+
+
+/* language selection */
+$("document").ready(function(){
+
+	$(".english").hide();
+	$(".german").show();
+
+	$("#german-button").click(function(e)
+	{	
+		$(".english").hide();
+		$(".german").show();
+	});
+	$("#english-button").click(function(e)
+	{	
+		$(".german").hide();
+		$(".english").show();
+	});
+});
+
+
+</script>
+
+</head>
+
+<body>
+	<div class='header-box'>
+
+		<div style='width:1000px;height:60px;'></div>
+		<psi style="color:#333333;">
+			<div class='german'>
+			Herzlich Willkommen ...
+			</div>
+			<div class='english'>
+			Welcome ...
+			</div>
+		</psi>
+		<div style='width:1000px;height:4px;background-color:black;box-shadow: 0px -5px 17px 0px rgba(200,200,200,1);'></div>
+		<!--<img src="pics/pic-banner.jpg" alt="some_text">-->
+		<div style="position:relative;">
+			<hr>
+			<div style="position:relative;">
+			<h1 style="text-align: center;">
+			<div class='german'>
+			Schwarzenberg 960 - Ferienwohnungen
+			</div>
+			<div class='english'>
+			Schwarzenberg 960 - holiday appartments
+			</div>
+			</h1>
+			<ps>
+				<div style="position:absolute; top:5px; left: 933px;">
+				<div id='german-button' class='lang-button'>deutsch</div>
+				<div id='english-button' class='lang-button'>english</div>
+				</div>
+			</ps>
+			</div>
+			<hr>
+		</div>
+	</div>
+
+
+
+
+<div class='box'>
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-house-green.jpg" alt="some_text">
+		<div class="post-content-small">	
+		<div class='german'><p>
+		Unsere neue moderne von Bregenzer Wälder Handwerkern erbaute und hochwertig ausgestatteten zwei Ferienwohnungen bieten Ihnen ein besonderes und ruhiges Ambiente für Ihren erholsamen Urlaub. Am Südhang gelegen (850m) genießen Sie über große Fensterflächen, die Sonnenterrasse oder über die Loggia einen fantastischen Blick – häufig über dem Nebel im Tal und den tiefhängenden Wolken – auf die beeindruckende Bergkulisse.
+		</p></div>
+		<div class='english'><p>
+		Our two new premium appartments, build and well-equipped by craftsmen from Begenzerwald, offer you a wonderful ambience for relaxing holidays. Situated on a southern slope (850m), you will enjoy fantastic views via the large windows, the terrace or the loggia - often above the mist and low-hanging clouds in the valley below.
+		</p></div>
+ 		</p> 
+
+		<!--
+		</div>
+		<div class="post-content-right-bottom-small">
+		-->
+
+
+		<div class='german'><p>
+		Helga Nonner
+		<br>
+		Brittenberg 960 (<a href="https://maps.google.com/maps?q=Brittenberg,+Schwarzenberg,+Austria&hl=en&ll=47.424981,9.843235&spn=0.017072,0.032015&sll=47.425198,9.84199&sspn=0.008536,0.016007&oq=britten,+austria&t=h&hnear=Brittenberg,+Bregenz,+Vorarlberg,+Austria&z=15">Karte</a>)
+		<br>
+		6867 Schwarzenberg
+		<br>
+		T +43 5512 20574
+		<br>
+		M +49 171 7973002
+		<br>
+		ferienwohnung@nonner.eu
+		<br>
+		<br>
+		<a href="http://tourismus.schwarzenberg.at/"><img src="pics/schwarzenberg.png" alt=""></a>
+		<a href="http://www.bregenzerwald.at"><img src="pics/bregenzerwald.png" alt=""></a> 
+		</p></div>
+		<div class='english'><p>
+		Helga Nonner
+		<br>
+		Brittenberg 960 (<a href="https://maps.google.com/maps?q=Brittenberg,+Schwarzenberg,+Austria&hl=en&ll=47.424981,9.843235&spn=0.017072,0.032015&sll=47.425198,9.84199&sspn=0.008536,0.016007&oq=britten,+austria&t=h&hnear=Brittenberg,+Bregenz,+Vorarlberg,+Austria&z=15">Map</a>)
+		<br>
+		6867 Schwarzenberg
+		<br>
+		T +43 5512 20574
+		<br>
+		M +49 171 7973002
+		<br>
+		ferienwohnung@nonner.eu
+		<br>
+		<br>
+		<a href="http://tourismus.schwarzenberg.at/"><img src="pics/schwarzenberg.png" alt=""></a>
+		<a href="http://www.bregenzerwald.at"><img src="pics/bregenzerwald.png" alt=""></a> 
+		</p></div>
+		
+		<!--
+		</div>
+		-->
+		
+	</div>
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-brittenberg.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Eingebettet in eine einzigartige Kulturlandschaft
+		</h2></div>
+		<div class='english'><h2> 
+		Embedded into a unique cultural landscape
+		</h2></div>
+		</div>
+
+		<div class='post-content-right'><p>
+		<div class='german'><p> 
+		Das Gesamtbild der gewachsenen Kulturlandschaft in Schwarzenberg unterstützen die von der Gemeinde gewünschten Bauvorgaben. Auch bei der Planung unseres Hauses wurden diese Vorgaben mit einbezogen und besonders auf die Einbettung in die umgebende Natur Wert gelegt.
+		</p></div>
+		<div class='english'><p> 
+		The overall picture of the grown cultural landscape is supported by the community guidelines. These guidelines have also been applied to our house, in addition to putting much weight on the integration into the surrounding nature.
+		</p></div>
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+	
+	
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-am-bach.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		1. Ferienwohnung "am Bach" -<br>mit schöner Sonnenterrasse
+		</h2></div>
+		<div class='english'><h2> 
+		Holiday appartment "near the Creek" - <br>with sunny terrace
+		</h2></div>
+		</div>		
+	</div>
+
+	
+	<div class='line-separate'></div>
+	
+	
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		2. Ferienwohnung "im Himmel" -<br>mit großzügiger Loggia
+		</h2></div>
+		<div class='english'><h2> 
+		Holiday appartment "in Heaven" - <br>with spacious loggia
+		</h2></div>
+		</div>		
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-glasses-view.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Von beiden Wohnungen fantastische Panoramablicke
+		</h2></div>
+		<div class='english'><h2> 
+		Both appartments offer fantasic panoramic views
+		</h2></div>
+ 		</div>
+
+		<div class='post-content-right-bottom-small'>
+		<div class='german'><p>
+		Bei der Belegung mit zwei Personen gelten jeweils folgende Preise:</p>
+		<ul style="position:relative; top:-20px; left:15px; width:250px">
+			<li><ps>105€ pro Tag</ps></li>
+			<li><ps>Belegung wochenweise</ps></li>
+			<li><ps>kürzere Belegung nur nach Absprache, dabei 70€ Endreinigunszuschlag</ps></li>
+			<li><ps>Inklusivleistungen: Tourismusabgabe, Endreinigung, Kabel-TV, Internet, Kaminholz, Handtücher, Bettwäsche, Bregenzerwaldcard: ab einem Aufenthalt von 3 Tagen stehen Ihnen die Bergbahnen und die Schwimmbäder von Mai bis Oktober zur Verfügung</ps></li>
+			<li><ps>Nichtraucherwohnungen</ps></li>
+			<li><ps>keine Haustiere</ps></li>
+		</ul></div>
+		<div class='english'><p> 
+		The following prices apply to an occupation with two persons:</p>
+		<ul style="position:relative; top:-20px; left:15px; width:250px">
+			<li><ps>105€ per day</ps></li>
+			<li><ps>weeekly occupation</ps></li>
+			<li><ps>shorter bookings only on request, then a 70€ final cleaning fee applies</ps></li>
+			<li><ps>includes: tourism fee, final cleaning, cable-TV, internet, fire wood, towels, sheets, Bregenzerwald-card: starting at a stay of three or more days, you are eligable to use the cable cars and the public pools from may to october
+				</ps></li>
+			<li><ps>non-smoker appartments</ps></li>
+			<li><ps>no pets</ps></li>
+		</ul></div>
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-oven.jpg" alt="some_text">
+
+		<div class="post-content">
+		<div class='german'><h2> 
+		Lichtdurchflutete Räume mit Kaminöfen für kühlere Tage
+		</h2></div>
+		<div class='english'><h2> 
+		Light rooms with fireplaces for chilly days
+		</h2></div>
+		</div>
+
+		<div class='post-content-right'>
+		<div class='german'><p> 
+		Hier im Bregenzerwald treffen Traditionsbewusstsein, ein respektvoller Umgang mit der historischen Bausubstanz und dem Gespür für moderne Architektur zusammen. Vorarlberger Architektur und designorientierte Produkte werden im In- und Ausland nachgefragt. Der Werkraum von Peter Zumthor in Andelsbuch bietet den vielfältigen innovativen Bregenzerwälder Handwerkern einen architektonisch beeindruckenden Präsentationsraum.
+		</p></div>
+		<div class='english'><p> 
+		Here in Bregenzerwald, a consciousness of tradition meets a respectful use of historic built volumes and a sense for modern architecture. Architects and design-oriented products from Vorarlberg face local demand as well as demand from abroad. The Werkraum build by Peter Zumthor in Andelsbuch offers the diverse innovative craftsmen from Bregenzerwald an impressive room for presentation.
+		</p></div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class='header-box'>
+		<div style='width:1000px;height:80px;'></div>
+		<div style='width:1000px;height:4px;background-color:black;box-shadow: 0px -5px 17px 0px rgba(200,200,200,1);'></div>
+		<!--<img src="pics/pic-banner.jpg" alt="some_text">-->
+		<div style="position:relative;">
+			<hr>
+			<div style="position:relative;">
+			<h1 style="text-align: center;">
+			<div class='german'>
+			1. Ferienwohnung "am Bach"
+			</div>
+			<div class='english'>
+			Holiday appartment "near the Creek"
+			</div>
+			</h1>
+			</div>
+			<hr>
+		</div>
+	</div>	
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-night.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Von Ihrem Carportplatz erreichen Sie die Wohnung "am Bach" mit Abstellraum über die Außentreppe und Terrasse
+		</h2></div>
+		<div class='english'><h2> 
+		You can reach the holiday appartment "near the Creek" and a storing room via the external stairs and terrace
+		</h2></div> 
+		</div>
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-entrance-am-bach.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Separater Eingangsbereich –<br>die Sauna mit Bademänteln liegt gleich nebenan
+		</h2></div>
+		<div class='english'><h2> 
+		Separate entrance area –<br>the sauna with bathrobes is nearby
+		</h2></div> 
+		</div>
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-table-am-bach.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Sitzbereich mit Kaminofen und aktiver Belüftung 
+		</h2></div>
+		<div class='english'><h2> 
+		Seats with fire place and active ventilation
+		</h2></div> 
+		</div>
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-kitchen.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Hochwertig und perfekt ausgestattete Küche -<br>Geschirrspüler, Backofen, Kapselkaffemaschine, Wasserkocher ...
+		</h2></div>
+		<div class='english'><h2> 
+		The kitchen is of premium quality and well-equipped with dishwasher, 
+			oven, capsule coffee machine, water heater ...
+		</h2></div> 
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-sleep-am-bach.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Schlafzimmer mit Doppelbett und Zugang zur Terrasse
+		</h2></div>
+		<div class='english'><h2> 
+		Sleeping room with double-bed and access to terrace
+		</h2></div> 
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-bath.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Großzügiges Bad mit ebener Dusche und Badewanne –<br>Handtuchwechsel auf Anfrage
+		</h2></div>
+		<div class='english'><h2> 
+		Spacious bath with ground-level shower and bathtub –<br>towels will be exchanged on request
+		</h2></div> 
+		</div>
+	</div>
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-living-am-bach.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Lichtdurchfluteter Wohnbereich mit TV, WLAN und Bücherauswahl
+		</h2></div>
+		<div class='english'><h2> 
+		Living room with TV, Wifi and a selection of books
+		</h2></div>  
+		</div>
+	</div>
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-plan-small-left.jpg" alt="some_text">
+
+		<div class="post-content-right-bottom">		
+		<div class='german'>
+		<p>Grundriss:</p>
+		<ps><ol style="position:relative; top:-20px; left:15px; width:250px">
+			<li><ps>Wohnzimmer</ps></li>
+			<li><ps>Küche</ps></li>
+			<li><ps>Schlafzimmer</ps></li>
+			<li><ps>Bad</ps></li>
+			<li><ps>Abstellraum</ps></li>
+			<li><ps>Weg zur Sauna</ps></li>
+		</ol></ps></div>
+
+		<div class='english'><p> 
+		<p>Floor plan:</p>
+		<ps><ol style="position:relative; top:-20px; left:15px; width:250px">
+			<li><ps>living room</ps></li>
+			<li><ps>kitchen</ps></li>
+			<li><ps>bedroom</ps></li>
+			<li><ps>bathroom</ps></li>
+			<li><ps>storage room</ps></li>
+			<li><ps>direction to sauna</ps></li>
+		</ol></ps></div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+	<div class='header-box'>
+		<div style='width:1000px;height:80px;'></div>
+		<div style='width:1000px;height:4px;background-color:black;box-shadow: 0px -5px 17px 0px rgba(200,200,200,1);'></div>
+		<!--<img src="pics/pic-banner.jpg" alt="some_text">-->
+		<div style="position:relative;">
+			<hr>
+			<div style="position:relative;">
+			<h1 style="text-align: center;">
+			<div class='german'>
+			2. Ferienwohnung "im Himmel"
+			</div>
+			<div class='english'>
+			Holiday appartment "in heaven"
+			</div>
+			</h1>
+			</div>
+			<hr>
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-entrance-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Ein Steg führt zum Eingang unserer neuen Ferienwohnung "im Himmel" im Dachgeschoss
+		</h2></div>
+		<div class='english'><h2> 
+		A bridge leads to our new holiday appartment "in heaven" in the attic
+		</h2></div> 
+		</div>
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-table-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Sie erreichen den Eingangsbereich über einen Vorraum
+				</h2></div>
+		<div class='english'><h2> 
+		You reach the entrance area via a hallway
+		</h2></div> 
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-living-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Wohnbereich - mit Traumblick auf die Berge, TV, WLAN und Bücherauswahl
+				</h2></div>
+		<div class='english'><h2> 
+		Living area - with a stunning view on the mountains, TV, Wifi and a selection of books
+		</h2></div> 
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-kitchen-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Offenes Atelier mit Loggia, Kaminofen und perfekt ausgerüsteter Küche -<br>Geschirrspüler, Induktionsherd mit Backofen und Mikrowelle, Kapselkaffeemaschine, Wasserkocher ...
+				</h2></div>
+		<div class='english'><h2> 
+		Open floor plan with loggia, fire place and perfectly equipped kitchen -<br>dishwasher, induction stove with oven and microwave, capsule coffee machine
+		</h2></div> 
+		</div>
+	</div>
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-sleeping-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Schlafbereich - das abgeschlossene Bad liegt gleich nebenan
+		</h2></div>
+		<div class='english'><h2> 
+		Sleeping area - the closed bathroom is just next door
+		</h2></div> 
+		</div>
+	</div>
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-bathroom-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Großzügiges Bad mit Kopfbrause und Badewanne -<br> Handtuchwechsel auf Anfrage
+		</h2></div>
+		<div class='english'><h2> 
+		Spacious batchroom with shower and bathtub -<br> towels will be exchanged on request 
+		</h2></div> 
+		</div>
+	</div>	
+	
+	
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-view-im-himmel.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Blick von der Hängematte in der Loggia!
+		</h2></div>
+		<div class='english'><h2> 
+		View from the hammock on the loggia!
+		</h2></div> 
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+	<div class='line-separate'></div>
+
+	<div class="thumbnail">
+		<img class='image-pic' src="pics/pic-clouds-kanisflu.jpg" alt="some_text">
+		<div class="post-content">
+		<div class='german'><h2> 
+		Wir freuen uns auf ihre Anfrage
+		</h2></div>
+		<div class='english'><h2> 
+		We are looking forward to your request
+		</h2></div> 
+		</div>
+
+		<div class="post-content-right">
+		<p> 
+		Aus unserem Gästebuch:<br><br>
+		 
+		September 2017: Wenn man einen schönen Ort schon sehr schätzt, kann man sich dort noch wohler fühlen? Bei Ihnen liebe Frau Nonner, ist es möglich!<br><br>
+		 
+		März 2018: Glückwunsch zu einem so schönen Haus in dieser tollen Lage. Ihre Ferienwohnung ist ein Traum, es fehlt an nichts. Die interessante Architektur, die klassische geschmackvolle Einrichtung mit der raumhohen Verglasung sind einfach super. An dem fantastischen Bergpanorama kann man sich gar nicht satt sehen ......<br><br>
+		 
+		Juli 2018: Ein Ort der Harmoniesuche und der Gastfreundschaft. Jeden Morgen Staunen, ja, die Berge sind immer noch da. Ein Ort des Wohlfühlens  mit Liebe zum Detail, ein Ort den man im Herzen mitnehmen kann ...<br><br>
+		 
+		Oktober 2018: Vielen Dank für diese wunderbare Woche in Ihrer schönen neuen Dachwohnung – sie klingt ganz lange nach + wir kommen wieder!
+		</p>
+		</div>
+	</div>
+</div>
+
+
+<br><br><br><br><br>
+
+<!--
+<div class='footer-box' style="height:100;">
+</div>
+-->
+
+
+
+</body>
+
+</html> 
